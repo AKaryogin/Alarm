@@ -33,7 +33,7 @@ public class VolumeController : MonoBehaviour
             _alarm.volume += 1 / duration;
             yield return null;
         }
-        Debug.Log("Max = " + _alarm.volume);
+        
         _currentCoroutine = StartCoroutine(SetVolumeDown(duration));
     }
 
@@ -44,7 +44,7 @@ public class VolumeController : MonoBehaviour
             _alarm.volume -= 1 / duration;
             yield return null;
         }
-        Debug.Log("Min = " + _alarm.volume);
+        
         _currentCoroutine = StartCoroutine(SetVolumeUp(duration));
     }
 }
