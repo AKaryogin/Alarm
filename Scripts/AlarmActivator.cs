@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlarmOnOff : MonoBehaviour
+public class AlarmActivator : MonoBehaviour
 {
     [SerializeField] private AudioSource _alarm;
-    [SerializeField] private SetVolume _setVolume;
+    [SerializeField] private VolumeController _volumeController;
 
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if(collision.TryGetComponent<Player>(out Player player)) 
         {
             _alarm.Play();
-            _setVolume.StartSetVolume();
+            _volumeController.StartSetVolume();
         }
     }
 
@@ -21,7 +21,7 @@ public class AlarmOnOff : MonoBehaviour
         if(collision.TryGetComponent<Player>(out Player player)) 
         {
             _alarm.Stop();
-            _setVolume.StoptSetVolume();
+            _volumeController.StoptSetVolume();
         }
     }
     

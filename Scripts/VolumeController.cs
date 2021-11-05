@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class SetVolume : MonoBehaviour
+public class VolumeController : MonoBehaviour
 {
     [SerializeField] private float _durationSetVolume;
 
